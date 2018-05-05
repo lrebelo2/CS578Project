@@ -1,12 +1,11 @@
 var CodeFlower = function(selector, info, w, h) {
-
   this.w = w;
   this.h = h;
   this.info = info;
 
-  d3.select(selector).selectAll("svg").remove();
+  d3v3.select(selector).selectAll("svg").remove();
 
-  this.svg = d3.select(selector).append("svg:svg")
+  this.svg = d3v3.select(selector).append("svg:svg")
     .attr('width', w)
     .attr('height', h);
 
@@ -16,7 +15,7 @@ var CodeFlower = function(selector, info, w, h) {
     .attr('width', w)
     .attr('height', h);
 
-  this.force = d3.layout.force()
+  this.force = d3v3.layout.force()
     .on("tick", this.tick.bind(this))
     .charge(function(d) { return d._children ? -d.size / 100 : -40; })
     .linkDistance(function(d) { return d.target._children ? 100 : 40; })
@@ -31,11 +30,11 @@ CodeFlower.prototype.update = function(json) {
   this.json.y = this.h / 2;
 
   var nodes = this.flatten(this.json);
-  var links = d3.layout.tree().links(nodes);
+  var links = d3v3.layout.tree().links(nodes);
   var total = nodes.length || 1;
   rootInd = nodes[(total-1)].id;
-    d3.select(info).selectAll("p").remove();
-    d3.select(info)
+    d3v3.select(info).selectAll("p").remove();
+    d3v3.select(info)
     .append("p")
       .text("The root is at " + nodes[(total - 1)].path)
     .append("p")

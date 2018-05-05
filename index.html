@@ -9,9 +9,11 @@
     <script type="text/javascript" src="javascripts/d3/d3.js"></script>
     <script type="text/javascript" src="javascripts/d3/d3.geom.js"></script>
     <script type="text/javascript" src="javascripts/d3/d3.layout.js"></script>
-    <script type="text/javascript" src="javascripts/dataConverter.js"></script>
     <script type="text/javascript" src="javascripts/CodeFlower.js"></script>
-    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+    <script type="text/javascript" src="javascripts/dataConverter.js"></script>
+    <script type="text/javascript" src="javascripts/mainscript.js"></script>
+    <script type="text/javascript" src="javascripts/d3.dependencyWheel.js"></script>
+     <script src="https://d3js.org/d3.v5.min.js"></script> 
     <script src='https://unpkg.com/intersection-observer'></script>
     <script src='https://unpkg.com/scrollama'></script>
 </head>
@@ -34,6 +36,7 @@
             <div class="chart">
                 <button id="reset" title='Run Layout in Slow Motion'>Reset</button>
                 <div id="visualization"></div>
+                
             </div>
         </div>
 
@@ -64,27 +67,12 @@
             <p>Mauris fringilla ut nibh vitae vulputate. Nulla ac finibus velit. Sed vel urna vitae nibh ultricies tincidunt nec pulvinar quam. In hac habitasse platea dictumst. Nam luctus sem ac volutpat viverra. Morbi posuere diam id turpis convallis, ut fringilla purus feugiat. Maecenas id lacus felis. Duis quis erat in neque pellentesque dapibus. Praesent fringilla augue finibus tempor mattis. Mauris tincidunt dui dui, sed laoreet turpis dapibus et.</p>
         </div>
     </section>
-    <script src="scrollama.js"></script>
+    <script src="javascripts/scrollama.js"></script>
     <script type="text/javascript">
-        var currentCodeFlower;
-        var createCodeFlower = function(json) {
-          // update the jsonData textarea
-          //document.getElementById('jsonData').value = JSON.stringify(json);
-          // remove previous flower to save memory
-          if (currentCodeFlower) currentCodeFlower.cleanup();
-          // adapt layout size to the total number of elements
-          var total = countElements(json);
-          w = parseInt(800, 10);
-          h = parseInt(800, 10);
-          // create a new CodeFlower
-          currentCodeFlower = new CodeFlower("#visualization","#info", w, h).update(json);
-        };
+        
   
-        d3.json('struct.json', createCodeFlower);
-  
-        document.getElementById('reset').addEventListener('click', function() {
-          d3.json('struct.json', createCodeFlower);
-        });
+         constructCodeFlower("visualization");
+        //constructSVGDepWheel("visualization");
        
     </script>
 

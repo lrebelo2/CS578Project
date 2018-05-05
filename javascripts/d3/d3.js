@@ -4643,3 +4643,4 @@ function d3_behavior_zoomExtentClamp(x, i, k) {
       : Math.max(r0, Math.min(r1, x));
 }
 })();
+this.d3v3 = d3;
