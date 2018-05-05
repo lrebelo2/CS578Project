@@ -206,7 +206,7 @@ function clean(n, selector) {
         button.setAttribute("id", "bttn");
         if(n == 0){
             var button = myframe.appendChild(document.createElement("button"));
-        button.innerHTML = "Rest";
+        button.innerHTML = "Reset";
         button.setAttribute("id", "reset");
         }
         if (n == 1) {
