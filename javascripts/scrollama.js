@@ -58,7 +58,10 @@ function handleStepEnter(response) { // response = { element, direction, index }
             gifMagic("visualization");
             break;
         default:
-            clean(3,"visualization");
+            clean(3, "visualization");
+            document.getElementById('reset').addEventListener('click', function () {
+                clean(3, selector);
+            });
     }
 }
 

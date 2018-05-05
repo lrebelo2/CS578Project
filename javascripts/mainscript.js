@@ -32,7 +32,7 @@ function constructCodeFlower(selector) {
     });
 
     document.getElementById('reset').addEventListener('click', function () {
-        //clean(0, selector);
+        clean(0, selector);
         createCodeFlower(res);
     });
 
@@ -178,9 +178,9 @@ function buildDepWheel(db, selector) {
 
 function gifMagic(selector) {
     clean(2, selector);
-    // document.getElementById('reset').addEventListener('click', function () {
-    //     clean(2, selector);
-    // });
+     document.getElementById('reset').addEventListener('click', function () {
+         clean(2, selector);
+     });
 }
 
 function clean(n, selector) {
@@ -204,11 +204,11 @@ function clean(n, selector) {
         var button = myframe.appendChild(document.createElement("button"));
         button.innerHTML = "Submit";
         button.setAttribute("id", "bttn");
-        if(n == 0){
-            var button = myframe.appendChild(document.createElement("button"));
-        button.innerHTML = "Reset";
-        button.setAttribute("id", "reset");
-        }
+//        if(n == 0){
+//            var button = myframe.appendChild(document.createElement("button"));
+//        button.innerHTML = "Reset";
+//        button.setAttribute("id", "reset");
+//        }
         if (n == 1) {
             var sliderdiv = myframe.appendChild(document.createElement("div"));
             var slider = sliderdiv.appendChild(document.createElement("input"));
