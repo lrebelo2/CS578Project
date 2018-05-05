@@ -8,8 +8,9 @@ function constructCodeFlower(selector) {
         if (currentCodeFlower) currentCodeFlower.cleanup();
         // adapt layout size to the total number of elements
         var total = countElements(json);
-        w = parseInt(800, 10);
-        h = parseInt(800, 10);
+        var len = Math.min(parseInt(Math.sqrt(total) * 30, 10), 800);
+        w = parseInt(len, 10);
+        h = parseInt(len, 10);
         // create a new CodeFlower
         currentCodeFlower = new CodeFlower("#here", "#info", w, h).update(json);
     };
@@ -54,9 +55,9 @@ function constructSVGDepWheel(selector) {
             alert("File not supported!");
         }
     });
-    document.getElementById('reset').addEventListener('click', function () {
-        clean(1, selector);
-    });
+    // document.getElementById('reset').addEventListener('click', function () {
+    //     clean(1, selector);
+    // });
 }
 
 function buildDB(r) {
@@ -177,9 +178,9 @@ function buildDepWheel(db, selector) {
 
 function gifMagic(selector) {
     clean(2, selector);
-    document.getElementById('reset').addEventListener('click', function () {
-        clean(2, selector);
-    });
+    // document.getElementById('reset').addEventListener('click', function () {
+    //     clean(2, selector);
+    // });
 }
 
 function clean(n, selector) {
@@ -194,6 +195,7 @@ function clean(n, selector) {
         var div = frame.appendChild(document.createElement("div"));
         div.setAttribute("id", "myframe");
     }
+
     if (n == 0 || n == 1) {
         var myframe = document.getElementById("myframe");
         var fileInput = myframe.appendChild(document.createElement("input"));
@@ -202,6 +204,11 @@ function clean(n, selector) {
         var button = myframe.appendChild(document.createElement("button"));
         button.innerHTML = "Submit";
         button.setAttribute("id", "bttn");
+        if(n == 0){
+            var button = myframe.appendChild(document.createElement("button"));
+        button.innerHTML = "Rest";
+        button.setAttribute("id", "reset");
+        }
         if (n == 1) {
             var sliderdiv = myframe.appendChild(document.createElement("div"));
             var slider = sliderdiv.appendChild(document.createElement("input"));
