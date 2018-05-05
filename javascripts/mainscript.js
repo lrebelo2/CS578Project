@@ -33,7 +33,7 @@ function constructCodeFlower(selector){
           w = parseInt(800, 10);
           h = parseInt(800, 10);
           // create a new CodeFlower
-          currentCodeFlower = new CodeFlower("#visualization","#info", w, h).update(json);
+          currentCodeFlower = new CodeFlower(selector,"#info", w, h).update(json);
         };
     var frame = document.getElementById(selector);
     if (frame) {
@@ -66,7 +66,7 @@ function constructCodeFlower(selector){
         });
       
       document.getElementById('reset').addEventListener('click', function() {
-        createCodeFlower(inputJson);
+        d3.select(selector).html("");
       });
     }
 }
