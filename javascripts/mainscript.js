@@ -1,115 +1,60 @@
-//window.onload = function () {
-//        var temp = document.getElementById("page-wrapper").insertBefore(document.createElement("button"), document.getElementById("page-wrapper").firstChild);
-//        temp.innerHTML = "Show me Stuff";
-//        var button = document.getElementById('show');
-//        temp.addEventListener('click', function (e) {
-//            //constructSVGDepWheel("displayArea");
-//     
-//         var reader = new FileReader();
-//                reader.onload = function (e) {
-//                     var myFlower = new CodeFlower("#visualization", 300, 200);
-//                    if(myFlower)  myflower.update(reader.result);
-//                }
-//                reader.readAsBinaryString("struct.json");
-//           
-//       
-//                  
-//        
-//        });
-//    }
-//    //CALL THIS FUNCTION, replacing selector, with the id of the div you want the stuff to show,
-//    //and it should produce the input box, the submit button, the slider, and the graph once the button //is pressed
-//
-
-function constructCodeFlower(selector){
+function constructCodeFlower(selector) {
+    clean(0, selector);
     var currentCodeFlower;
-        var createCodeFlower = function(json) {
-          // update the jsonData textarea
-          //document.getElementById('jsonData').value = JSON.stringify(json);
-          // remove previous flower to save memory
-          if (currentCodeFlower) currentCodeFlower.cleanup();
-          // adapt layout size to the total number of elements
-          var total = countElements(json);
-          w = parseInt(800, 10);
-          h = parseInt(800, 10);
-          // create a new CodeFlower
-          currentCodeFlower = new CodeFlower(selector,"#info", w, h).update(json);
-        };
-    var frame = document.getElementById(selector);
-    if (frame) {
-        var div = frame.appendChild(document.createElement("div"));
-        div.setAttribute("id", "myframe");
-        var fileInput = div.appendChild(document.createElement("input"));
-        fileInput.setAttribute("type", "file");
-        fileInput.setAttribute("id", "fileInput");
-        var button = div.appendChild(document.createElement("button"));
-        button.innerHTML = "Submit";
-        button.setAttribute("id", "bttn");
-        var here = div.appendChild(document.createElement("div"));
-        here.setAttribute("id", "here");
-        var inputJson = null;
-        document.getElementById("bttn").addEventListener('click', function (e) {
-            d3v3.select("#here").html("");
-            var file = document.getElementById("fileInput").files[0];
-            console.log(file);
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                  var res =  JSON.parse(reader.result);
-                  createCodeFlower(res);
-                }
-                reader.readAsText(file);
+    var createCodeFlower = function (json) {
+        // update the jsonData textarea
+        //document.getElementById('jsonData').value = JSON.stringify(json);
+        // remove previous flower to save memory
+        if (currentCodeFlower) currentCodeFlower.cleanup();
+        // adapt layout size to the total number of elements
+        var total = countElements(json);
+        w = parseInt(800, 10);
+        h = parseInt(800, 10);
+        // create a new CodeFlower
+        currentCodeFlower = new CodeFlower("#here", "#info", w, h).update(json);
+    };
+    document.getElementById("bttn").addEventListener('click', function (e) {
+        d3v3.select("#here").html("");
+        var file = document.getElementById("fileInput").files[0];
+        console.log(file);
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var res = JSON.parse(reader.result);
+                createCodeFlower(res);
             }
-            else {
-                alert("File not supported!");
-            }
-        });
-      
-      document.getElementById('reset').addEventListener('click', function() {
-        d3.select(selector).html("");
-      });
-    }
+            reader.readAsText(file);
+        } else {
+            alert("File not supported!");
+        }
+    });
+
+    document.getElementById('reset').addEventListener('click', function () {
+        clean(0, selector);
+    });
+
 }
 
 
 function constructSVGDepWheel(selector) {
-    var frame = document.getElementById(selector);
-    if (frame) {
-        var div = frame.appendChild(document.createElement("div"));
-        div.setAttribute("id", "myframe");
-        var fileInput = div.appendChild(document.createElement("input"));
-        fileInput.setAttribute("type", "file");
-        fileInput.setAttribute("id", "fileInput");
-        var button = div.appendChild(document.createElement("button"));
-        button.innerHTML = "Submit";
-        button.setAttribute("id", "bttn");
-        var sliderdiv = div.appendChild(document.createElement("div"));
-        var slider = sliderdiv.appendChild(document.createElement("input"));
-        slider.setAttribute("id", "myRange");
-        slider.setAttribute("min", "0");
-        slider.setAttribute("max", "100");
-        slider.setAttribute("value", "0");
-        slider.setAttribute("class", "slider");
-        slider.setAttribute("type", "range");
-        var here = div.appendChild(document.createElement("div"));
-        here.setAttribute("id", "here");
-        document.getElementById("myRange").value = 0;
-        document.getElementById("bttn").addEventListener('click', function (e) {
-            d3.select("#here").html("");
-            var file = document.getElementById("fileInput").files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    var db = buildDB(reader.result);
-                    buildDepWheel(db, selector);
-                }
-                reader.readAsText(file);
+    clean(1, selector);
+
+    document.getElementById("bttn").addEventListener('click', function (e) {
+        var file = document.getElementById("fileInput").files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var db = buildDB(reader.result);
+                buildDepWheel(db, selector);
             }
-            else {
-                alert("File not supported!");
-            }
-        });
-    }
+            reader.readAsText(file);
+        } else {
+            alert("File not supported!");
+        }
+    });
+    document.getElementById('reset').addEventListener('click', function () {
+        clean(1, selector);
+    });
 }
 
 function buildDB(r) {
@@ -142,25 +87,21 @@ function buildDB(r) {
                     if (package1 != package2 && package1 && package2) {
                         if (!db[i]) {
                             db[i] = new Map();
-                        }
-                        else {
+                        } else {
                             if (!db[i].has(package1)) {
                                 db[i].set(package1, new Map());
                                 db[i].get(package1).set(package2, 1);
-                            }
-                            else {
+                            } else {
                                 if (!db[i].get(package1).has(package2)) {
                                     db[i].get(package1).set(package2, 1)
-                                }
-                                else {
+                                } else {
                                     db[i].get(package1).set(package2, db[i].get(package1).get(package2) + 1)
                                 }
                             }
                         }
                     }
                 }
-            }
-            else {
+            } else {
                 alert("Wrong file type!");
             }
         }
@@ -169,7 +110,7 @@ function buildDB(r) {
 }
 
 function buildDepWheel(db, selector) {
-    d3.select("#here").attr("width", "960").attr("height", "960");
+//    d3.select("#here").attr("width", "960").attr("height", "960");
     var dataArray = [];
     for (i in db) {
         var data = {};
@@ -194,8 +135,7 @@ function buildDepWheel(db, selector) {
                 }
             });
             dataArray.push(data);
-        }
-        else {
+        } else {
             alert("No dependencies");
         }
     }
@@ -213,10 +153,10 @@ function buildDepWheel(db, selector) {
             oldx = x;
         }
     }
-    document.getElementById('reset').addEventListener('click', function() {
-        display.data([dataArray[0]]).call(d3.chart.dependencyWheel());
-      });
-    
+    document.getElementById('reset').addEventListener('click', function () {
+        clean(1,selector);
+    });
+
     display.data([dataArray[0]]).call(d3.chart.dependencyWheel());
     //    d3.select("#here").transition().duration(1500).styleTween("opacity", function () {
     //        return d3.interpolate(0, 100);
@@ -228,4 +168,63 @@ function buildDepWheel(db, selector) {
         }
         return array;
     }
+}
+
+
+
+
+function gifMagic(selector) {
+    clean(2, selector);
+    document.getElementById('reset').addEventListener('click', function () {
+        clean(2, selector);
+    });
+}
+
+function clean(n, selector) {
+
+    var t = document.getElementById(selector)
+    while (t.firstChild) {
+        t.removeChild(t.firstChild);
+    }
+    var frame = document.getElementById(selector);
+    var myframe = document.getElementById("myframe");
+    if (!myframe) {
+        var div = frame.appendChild(document.createElement("div"));
+        div.setAttribute("id", "myframe");
+    }
+    if (n == 0 || n == 1) {
+        var myframe = document.getElementById("myframe");
+        var fileInput = myframe.appendChild(document.createElement("input"));
+        fileInput.setAttribute("type", "file");
+        fileInput.setAttribute("id", "fileInput");
+        var button = myframe.appendChild(document.createElement("button"));
+        button.innerHTML = "Submit";
+        button.setAttribute("id", "bttn");
+        if (n == 1) {
+            var sliderdiv = myframe.appendChild(document.createElement("div"));
+            var slider = sliderdiv.appendChild(document.createElement("input"));
+            slider.setAttribute("id", "myRange");
+            slider.setAttribute("min", "0");
+            slider.setAttribute("max", "100");
+            slider.setAttribute("value", "0");
+            slider.setAttribute("class", "slider");
+            slider.setAttribute("type", "range");
+            document.getElementById("myRange").value = 0;
+        }
+        var here = myframe.appendChild(document.createElement("div"));
+        here.setAttribute("id", "here");
+    } else if (n == 2) {
+        var myframe = document.getElementById("myframe");
+        var gif = myframe.appendChild(document.createElement("img")); gif.setAttribute("src","https://media.giphy.com/media/CvZuv5m5cKl8c/giphy.gif");
+        gif.setAttribute("width",400);
+        gif.setAttribute("height",300);
+       
+    }else{
+        var myframe = document.getElementById("myframe");
+        var finalWordsDiv = myframe.appendChild(document.createElement("text"));
+        finalWordsDiv.innerHTML="Placeholder for final words if we are using it";
+    }
+
+
+
 }

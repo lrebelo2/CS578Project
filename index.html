@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Test Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
-    <script src="https://d3js.org/d3.v5.min.js"></script> 
-    <script type="text/javascript" src="javascripts/d3/d3.js"></script>
-    <script type="text/javascript" src="javascripts/d3/d3.geom.js"></script>
-    <script type="text/javascript" src="javascripts/d3/d3.layout.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="javascripts/d3/d3v3.js"></script>
+    <script type="text/javascript" src="javascripts/d3/d3v3.geom.js"></script>
+    <script type="text/javascript" src="javascripts/d3/d3v3.layout.js"></script>
     <script type="text/javascript" src="javascripts/CodeFlower.js"></script>
     <script type="text/javascript" src="javascripts/dataConverter.js"></script>
     <script type="text/javascript" src="javascripts/mainscript.js"></script>
@@ -17,12 +18,13 @@
     <script src='https://unpkg.com/intersection-observer'></script>
     <script src='https://unpkg.com/scrollama'></script>
 </head>
+
 <body>
     <section>
         <h1>THIS IS THE TITLE SECTION</h1>
         <p>Here is some follow up text to this stuff.</p>
         <div class="other_section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet finibus ipsum. Nunc luctus massa congue urna ullamcorper, nec vehicula justo fringilla. Maecenas lorem magna, sodales vel venenatis nec, ultrices at enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim molestie laoreet. Mauris sit amet efficitur neque, auctor posuere odio. Aenean vestibulum nisi ut augue finibus, non tristique ante sollicitudin. Donec et suscipit massa, vel commodo tellus. In hac habitasse platea dictumst. Proin et malesuada nulla. Nunc semper enim ipsum, eu interdum dolor gravida et. Curabitur nec massa tellus.</p> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet finibus ipsum. Nunc luctus massa congue urna ullamcorper, nec vehicula justo fringilla. Maecenas lorem magna, sodales vel venenatis nec, ultrices at enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim molestie laoreet. Mauris sit amet efficitur neque, auctor posuere odio. Aenean vestibulum nisi ut augue finibus, non tristique ante sollicitudin. Donec et suscipit massa, vel commodo tellus. In hac habitasse platea dictumst. Proin et malesuada nulla. Nunc semper enim ipsum, eu interdum dolor gravida et. Curabitur nec massa tellus.</p>
             <p>Fusce et justo ut erat efficitur aliquet. Duis in lobortis erat, eu dapibus eros. Ut diam sem, pellentesque sit amet eleifend vitae, dignissim a neque. Etiam vel consectetur velit. Morbi dignissim et nibh eget eleifend. Pellentesque convallis nisl in eleifend vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere, nulla at luctus placerat, urna nisi consectetur neque, vel ultricies odio metus ut est.</p>
             <p>Nam congue eros id maximus placerat. Sed ac porttitor nunc. Ut ipsum arcu, venenatis nec urna vitae, sagittis maximus lorem. Nunc dapibus elementum nulla, quis iaculis tellus. Aenean convallis, metus quis hendrerit malesuada, tellus odio aliquam felis, quis ornare sapien metus non arcu. Vestibulum rutrum vehicula sagittis. Mauris nec justo molestie, blandit dui nec, dapibus urna.</p>
             <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus rhoncus lacus eget dui lobortis cursus. Nulla ornare fringilla hendrerit. Praesent eu justo faucibus, semper ante ut, dictum orci. Praesent ac turpis sollicitudin, accumsan nisi ut, tincidunt nisl. Etiam sed gravida ante. Suspendisse potenti. Aenean orci justo, auctor ut purus at, semper convallis ante. Donec pellentesque condimentum magna non dignissim. Donec vel aliquet ipsum. Nunc eleifend vestibulum nulla sed feugiat. Morbi placerat, enim et malesuada tincidunt, mauris est bibendum neque, tempor tristique felis est quis est. Duis nulla risus, posuere in dictum elementum, rhoncus sed metus. Donec congue, enim ac ultricies porta, augue libero tincidunt lacus, vitae placerat nisi leo nec felis.</p>
@@ -36,31 +38,39 @@
             <div class="chart">
                 <button id="reset" title='Run Layout in Slow Motion'>Reset</button>
                 <div id="visualization"></div>
-                
+
             </div>
         </div>
 
         <!-- step/text container -->
         <div class="scroll__text">
             <div class="step" data-step="1">
-                <p><h1>Negar's Graphic</h1></p>
+                <p>
+                    <h1>Negar's Graphic</h1>
+                </p>
                 <div id="info">This visualization helps us to dive into an existing project and have a bird's eye view of the whole code</div>
             </div>
             <div class="step" data-step="2">
-                <h1><p>Lucas's Graphic</p></h1>
+                <h1>
+                    <p>Lucas's Graphic</p>
+                </h1>
             </div>
             <div class="step" data-step="3">
-                <h1><p>Vahag's Graphic</p></h1>
+                <h1>
+                    <p>Vahag's Graphic</p>
+                </h1>
             </div>
             <div class="step" data-step="4">
-                <h1><p>Final Words</p></h1>
+                <h1>
+                    <p>Final Words</p>
+                </h1>
             </div>
         </div>
 
     </section>
     <section>
         <div class="other_section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet finibus ipsum. Nunc luctus massa congue urna ullamcorper, nec vehicula justo fringilla. Maecenas lorem magna, sodales vel venenatis nec, ultrices at enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim molestie laoreet. Mauris sit amet efficitur neque, auctor posuere odio. Aenean vestibulum nisi ut augue finibus, non tristique ante sollicitudin. Donec et suscipit massa, vel commodo tellus. In hac habitasse platea dictumst. Proin et malesuada nulla. Nunc semper enim ipsum, eu interdum dolor gravida et. Curabitur nec massa tellus.</p> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet finibus ipsum. Nunc luctus massa congue urna ullamcorper, nec vehicula justo fringilla. Maecenas lorem magna, sodales vel venenatis nec, ultrices at enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim molestie laoreet. Mauris sit amet efficitur neque, auctor posuere odio. Aenean vestibulum nisi ut augue finibus, non tristique ante sollicitudin. Donec et suscipit massa, vel commodo tellus. In hac habitasse platea dictumst. Proin et malesuada nulla. Nunc semper enim ipsum, eu interdum dolor gravida et. Curabitur nec massa tellus.</p>
             <p>Fusce et justo ut erat efficitur aliquet. Duis in lobortis erat, eu dapibus eros. Ut diam sem, pellentesque sit amet eleifend vitae, dignissim a neque. Etiam vel consectetur velit. Morbi dignissim et nibh eget eleifend. Pellentesque convallis nisl in eleifend vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere, nulla at luctus placerat, urna nisi consectetur neque, vel ultricies odio metus ut est.</p>
             <p>Nam congue eros id maximus placerat. Sed ac porttitor nunc. Ut ipsum arcu, venenatis nec urna vitae, sagittis maximus lorem. Nunc dapibus elementum nulla, quis iaculis tellus. Aenean convallis, metus quis hendrerit malesuada, tellus odio aliquam felis, quis ornare sapien metus non arcu. Vestibulum rutrum vehicula sagittis. Mauris nec justo molestie, blandit dui nec, dapibus urna.</p>
             <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus rhoncus lacus eget dui lobortis cursus. Nulla ornare fringilla hendrerit. Praesent eu justo faucibus, semper ante ut, dictum orci. Praesent ac turpis sollicitudin, accumsan nisi ut, tincidunt nisl. Etiam sed gravida ante. Suspendisse potenti. Aenean orci justo, auctor ut purus at, semper convallis ante. Donec pellentesque condimentum magna non dignissim. Donec vel aliquet ipsum. Nunc eleifend vestibulum nulla sed feugiat. Morbi placerat, enim et malesuada tincidunt, mauris est bibendum neque, tempor tristique felis est quis est. Duis nulla risus, posuere in dictum elementum, rhoncus sed metus. Donec congue, enim ac ultricies porta, augue libero tincidunt lacus, vitae placerat nisi leo nec felis.</p>
@@ -68,16 +78,10 @@
         </div>
     </section>
     <script src="javascripts/scrollama.js"></script>
-    <script type="text/javascript">
-        
-  
-         constructCodeFlower("#visualization");
-        //constructSVGDepWheel("visualization");
-       
-    </script>
+
 
 </body>
 
 
-    
+
 </html>

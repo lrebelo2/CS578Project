@@ -1,28 +1,28 @@
 #scroll {
-  position: relative;
+    position: relative;
 }
 
 .scroll__graphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: auto;
-  width: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  /* border: 2px solid green; */
-  height: auto;
-} 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* border: 2px solid green; */
+    height: auto;
+}
 
-.scroll__graphic.is-fixed{
-  position: fixed;
-  left: -8px;
-} 
+.scroll__graphic.is-fixed {
+    position: fixed;
+    left: -8px;
+}
 
 .scroll__graphic.is-bottom {
-  bottom: 0;
-  top: auto;
+    bottom: 0;
+    top: auto;
 }
 
 /* Although you can put whatever you want 
@@ -33,68 +33,68 @@ to add a
 to the mix. The width and height are set in JS. */
 
 .scroll__graphic .chart {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  height: 100%;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 100%;
 }
 
 .scroll__text {
-  padding: 0 0;
-  max-width: 33%;
-  /* border: 2px dotted red; */
+    padding: 0 0;
+    max-width: 33%;
+    /* border: 2px dotted red; */
 }
 
 .step {
-  opacity: 0.2;
-  padding: 1rem;
-  transition: 500ms ease;
+    opacity: 0.2;
+    padding: 1rem;
+    transition: 500ms ease;
 }
 
 .step.is-active {
-  opacity: 1;
-  transition: 500ms ease;
+    opacity: 1;
+    transition: 500ms ease;
 }
 
 
 /* ****************************************** */
 
 circle.node {
-  cursor: pointer;
-  stroke: #000;
-  stroke-width: .5px;
+    cursor: pointer;
+    stroke: #000;
+    stroke-width: .5px;
 }
 
 circle.node.directory {
-  stroke: #9ecae1;
-  stroke-width: 2px;
+    stroke: #9ecae1;
+    stroke-width: 2px;
 }
 
 circle.node.collapsed {
-  stroke: #555;
+    stroke: #555;
 }
 
 .nodetext {
-  fill: #252929;
-  font-weight: bold;
-  text-shadow: 0 0 0.2em white;
+    fill: #252929;
+    font-weight: bold;
+    text-shadow: 0 0 0.2em white;
 }
 
 line.link {
-  fill: none;
-  stroke: #9ecae1;
-  stroke-width: 1.5px;
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1.5px;
 }
 
 .slider {
-    margin-top:10px;
+    margin-top: 10px;
     -webkit-appearance: none;
     width: 480px;
     height: 8px;
-    border-radius: 2px;   
+    border-radius: 2px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -107,7 +107,7 @@ line.link {
     appearance: none;
     width: 18px;
     height: 18px;
-    border-radius: 50%; 
+    border-radius: 50%;
     background: #4CAF50;
     cursor: pointer;
 }
