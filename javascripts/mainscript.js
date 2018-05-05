@@ -212,7 +212,7 @@ function clean(n, selector) {
             document.getElementById("myRange").value = 0;
         }
         var here = myframe.appendChild(document.createElement("div"));
-        here.setAttribute("id", "hergit mere");
+        here.setAttribute("id", "here");
     } else if (n == 2) {
         var myframe = document.getElementById("myframe");
         var gif = myframe.appendChild(document.createElement("img")); gif.setAttribute("src","https://media.giphy.com/media/CvZuv5m5cKl8c/giphy.gif");
