@@ -1,0 +1,90 @@
+#scroll {
+  position: relative;
+}
+
+.scroll__graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  border: 2px solid green;
+  height: auto;
+} 
+
+.scroll__graphic.is-fixed{
+  position: fixed;
+  left: -8px;
+} 
+
+.scroll__graphic.is-bottom {
+  bottom: 0;
+  top: auto;
+}
+
+/* Although you can put whatever you want 
+inside the graphic container, here is a common way 
+to add a 
+> non-fullscreen, 
+> vertically-centered chart 
+to the mix. The width and height are set in JS. */
+
+.scroll__graphic .chart {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 100%;
+}
+
+.scroll__text {
+  padding: 0 0;
+  max-width: 33%;
+  border: 2px dotted red;
+}
+
+.step {
+  opacity: 0.2;
+  padding: 1rem;
+  transition: 500ms ease;
+}
+
+.step.is-active {
+  opacity: 1;
+  transition: 500ms ease;
+}
+
+
+/* ****************************************** */
+
+circle.node {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+circle.node.directory {
+  stroke: #9ecae1;
+  stroke-width: 2px;
+}
+
+circle.node.collapsed {
+  stroke: #555;
+}
+
+.nodetext {
+  fill: #252929;
+  font-weight: bold;
+  text-shadow: 0 0 0.2em white;
+}
+
+line.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}
