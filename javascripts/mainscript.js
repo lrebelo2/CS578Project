@@ -224,9 +224,9 @@ function clean(n, selector) {
         here.setAttribute("id", "here");
     } else if (n == 2) {
         var myframe = document.getElementById("myframe");
-        var gif = myframe.appendChild(document.createElement("img")); gif.setAttribute("src","https://media.giphy.com/media/CvZuv5m5cKl8c/giphy.gif");
-        gif.setAttribute("width",400);
-        gif.setAttribute("height",300);
+        var gif = myframe.appendChild(document.createElement("img")); gif.setAttribute("src","clusters.gif");
+        gif.setAttribute("width",700);
+        gif.setAttribute("height",500);
        
     }else{
         var myframe = document.getElementById("myframe");
