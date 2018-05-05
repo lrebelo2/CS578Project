@@ -11,7 +11,7 @@
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  border: 2px solid green;
+  /* border: 2px solid green; */
   height: auto;
 } 
 
@@ -45,7 +45,7 @@ to the mix. The width and height are set in JS. */
 .scroll__text {
   padding: 0 0;
   max-width: 33%;
-  border: 2px dotted red;
+  /* border: 2px dotted red; */
 }
 
 .step {
