@@ -13,6 +13,7 @@ function constructCodeFlower(selector) {
         // create a new CodeFlower
         currentCodeFlower = new CodeFlower("#here", "#info", w, h).update(json);
     };
+    var res = null;
     document.getElementById("bttn").addEventListener('click', function (e) {
         d3v3.select("#here").html("");
         var file = document.getElementById("fileInput").files[0];
@@ -20,7 +21,7 @@ function constructCodeFlower(selector) {
         if (file) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                var res = JSON.parse(reader.result);
+                res = JSON.parse(reader.result);
                 createCodeFlower(res);
             }
             reader.readAsText(file);
@@ -30,7 +31,8 @@ function constructCodeFlower(selector) {
     });
 
     document.getElementById('reset').addEventListener('click', function () {
-        clean(0, selector);
+        //clean(0, selector);
+        createCodeFlower(res);
     });
 
 }
