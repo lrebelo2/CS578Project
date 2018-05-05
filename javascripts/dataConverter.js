@@ -106,8 +106,10 @@ var getChildren = function(json) {
 // Recursively count all elements in a tree
 var countElements = function(node) {
   var nbElements = 1;
+  if(node){
   if (node.children) {
     nbElements += node.children.reduce(function(p, v) { return p + countElements(v); }, 0);
   }
+}
   return nbElements;
 };
