@@ -55,7 +55,7 @@ Slider: Moving the slider right changes the graph to show subsequentially lower 
 
 Mouseover: Mousing over any package name willl highlight its dependencies
 
-3. Clusters Visualization
+3. Clusters Visualization 
 
 This application should be placed on local server to prevent cross domain issue. Since it is reading json files from a local folder. Apache servers are preinstalled on MAC OS.
 
