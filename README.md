@@ -44,7 +44,18 @@ Clicking on each node, the visualization starts from that node. That node become
 
 2. Dependencies Visualization
 
-3. Clusters Visualization
+<<<<<<< HEAD
+2.1. Generating Input: Simply run Arcade on your system on any recovery method to generate your "...deps.rsf" file.
+    
+2.2. Generate the graph: On the page, submit your ...deps.rsf file and click the Submit button. It will generate the graph showing the highest level of abstraction.
+
+2.3. Reading the graph: The graph shows a dependency wheel chord diagram.
+
+Slider: Moving the slider right changes the graph to show subsequentially lower abstraction levels
+
+Mouseover: Mousing over any package name willl highlight its dependencies
+
+3. Clusters Visualization 
 
 This application should be placed on local server to prevent cross domain issue. Since it is reading json files from a local folder. Apache servers are preinstalled on MAC OS.
 

@@ -60,9 +60,17 @@
             <div class="step" data-step="2">
                 <h1>Dependencies Visulization</h1>
                     <h4>Purpose</h4>
-                   What is shows 
+                    Large systems can have very complex visualizations of its    dependencies and this visualization seeks to 
+                    leverage the output of recoveries and package naming to illustrate dependencies between them rather
+                    than just between code files themselves. Since developers separate concerns in their package and 
+                    name them accordingly, this represents the dependencies on a multiple higher levels of abstraction.
+                    For example, from: 
+                            <p>depends<br>edu.berkeley.chukwa_xtrace.CausalGraph                          <br>org.apache.log4j.Logger</p>
+        
+
+                    We can extract 4 different relationships from "depends edu org" to "depends edu.berkeley org.apache" and so on... 
                     <h4>Usage</h4>
-                    how to use it
+                Choose your ...deps.rsf file and click the Submit button. It will generate the graph showing the highest level of abstraction.<p>Moving the slider right changes the graph to show subsequentially lower abstraction levels</p>
             </div>
             <div class="step" data-step="3">
                 <h1>Clusters Visulization</h1>
@@ -74,21 +82,16 @@
                     When you are at cluster.html page, choose your target recovery method and the rsf file corresponding to the target system in Load directory. 
                     Please note that the input of this recovery method a JSON file generated before. To generate the input file, read the README.md file.
             </div>
-            <div class="step" data-step="4">
-                <h1>
-                    <p>Final Words</p>
-                </h1>
-            </div>
         </div>
 
     </section>
     <section>
         <div class="other_section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet finibus ipsum. Nunc luctus massa congue urna ullamcorper, nec vehicula justo fringilla. Maecenas lorem magna, sodales vel venenatis nec, ultrices at enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim molestie laoreet. Mauris sit amet efficitur neque, auctor posuere odio. Aenean vestibulum nisi ut augue finibus, non tristique ante sollicitudin. Donec et suscipit massa, vel commodo tellus. In hac habitasse platea dictumst. Proin et malesuada nulla. Nunc semper enim ipsum, eu interdum dolor gravida et. Curabitur nec massa tellus.</p>
-            <p>Fusce et justo ut erat efficitur aliquet. Duis in lobortis erat, eu dapibus eros. Ut diam sem, pellentesque sit amet eleifend vitae, dignissim a neque. Etiam vel consectetur velit. Morbi dignissim et nibh eget eleifend. Pellentesque convallis nisl in eleifend vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere, nulla at luctus placerat, urna nisi consectetur neque, vel ultricies odio metus ut est.</p>
-            <p>Nam congue eros id maximus placerat. Sed ac porttitor nunc. Ut ipsum arcu, venenatis nec urna vitae, sagittis maximus lorem. Nunc dapibus elementum nulla, quis iaculis tellus. Aenean convallis, metus quis hendrerit malesuada, tellus odio aliquam felis, quis ornare sapien metus non arcu. Vestibulum rutrum vehicula sagittis. Mauris nec justo molestie, blandit dui nec, dapibus urna.</p>
-            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus rhoncus lacus eget dui lobortis cursus. Nulla ornare fringilla hendrerit. Praesent eu justo faucibus, semper ante ut, dictum orci. Praesent ac turpis sollicitudin, accumsan nisi ut, tincidunt nisl. Etiam sed gravida ante. Suspendisse potenti. Aenean orci justo, auctor ut purus at, semper convallis ante. Donec pellentesque condimentum magna non dignissim. Donec vel aliquet ipsum. Nunc eleifend vestibulum nulla sed feugiat. Morbi placerat, enim et malesuada tincidunt, mauris est bibendum neque, tempor tristique felis est quis est. Duis nulla risus, posuere in dictum elementum, rhoncus sed metus. Donec congue, enim ac ultricies porta, augue libero tincidunt lacus, vitae placerat nisi leo nec felis.</p>
-            <p>Mauris fringilla ut nibh vitae vulputate. Nulla ac finibus velit. Sed vel urna vitae nibh ultricies tincidunt nec pulvinar quam. In hac habitasse platea dictumst. Nam luctus sem ac volutpat viverra. Morbi posuere diam id turpis convallis, ut fringilla purus feugiat. Maecenas id lacus felis. Duis quis erat in neque pellentesque dapibus. Praesent fringilla augue finibus tempor mattis. Mauris tincidunt dui dui, sed laoreet turpis dapibus et.</p>
+            <h1>Final Words</h1>
+                    <p>Usage of these tools provides a more general view of the system leveraging the recovery outputs to provide:</p>
+                    <p>- A bird's eye view of the whole code, showing the structure of the system that allows the architect or developer to gauge the system's complexity without looking at the code. </p>
+                    <p>- An interactive way to gauge how separation of concerns is implemented in the system, as well as the complexity of its interdependencies.</p>
+                    <p>- Comparision between the different recovery methods clustering algorithm, and how well they truly represent the system.</p>
         </div>
     </section>
     <script src="javascripts/scrollama.js"></script>
