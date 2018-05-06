@@ -224,9 +224,13 @@ function clean(n, selector) {
         here.setAttribute("id", "here");
     } else if (n == 2) {
         var myframe = document.getElementById("myframe");
-        var gif = myframe.appendChild(document.createElement("img")); gif.setAttribute("src","clusters.gif");
+        var gif = myframe.appendChild(document.createElement("img")); 
+        gif.setAttribute("src","clusters.gif");
         gif.setAttribute("width",700);
         gif.setAttribute("height",500);
+        gif.onclick = function () {
+        location.href = "clusters/cluster.html";
+    };
        
     }else{
         var myframe = document.getElementById("myframe");
