@@ -9,7 +9,7 @@ console.log(Filename.length);
 
 for (var k=0; k < Filename.length; k++){
     var splitted = Filename[k].split("_");
-    var systemName = splitted[0]+"_"+splitted[1];
+    var systemName = splitted[0];
     if(Filename[k].indexOf('arc') > -1 && Filename[k].indexOf('clusters') > -1 ){
         generate(Filename[k], 'ARC', systemName);
     }else if(Filename[k].indexOf('acdc') > -1 && Filename[k].indexOf('clustered') > -1 ){
