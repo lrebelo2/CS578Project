@@ -13,13 +13,17 @@ Scrolling the page, three tools are available for visualzations:
 1.1. Generating Input: The input for this tool is a JSON file containing the information of the source code. To generate a JSON file from a system's code. We used a Java code which is available as structure.jar. This jar file go over the directories and files of a system starting from a path given to it from the input. It also uses dependencies.rsf file to find class dependencies. The jar file aslo accepts file extentions to consider those file types and ignore other file types. 
 
 The command to run the jar file is:
+
 	java -jar structure.jar {path to the root directory}[mandatory] {path to the dependencies.rsf file}[mandatory] {system's name}[mandatory] {specific file formats}[optional]
 
 For example:
+
 To run the jar file to consider all files: 
+
 	java -jar structure.jar /Users/negar/Desktop/chukwa-0.3.0/build/chukwa /Users/negar/Desktop/chukwa-0.3.0_deps.rsf chukwa-0.3.0 
 
 To run the jar file to consider specific files: 
+
 	java -jar structure.jar /Users/negar/Desktop/chukwa-0.3.0/build/chukwa /Users/negar/Desktop/chukwa-0.3.0_deps.rsf chukwa-0.3.0 .js .java .class
 
 The output of this jar file is a JSON file named {system's name}_struct.json
