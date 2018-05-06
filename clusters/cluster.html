@@ -45,15 +45,21 @@
         <div class="row">
             <form class="form-inline" id="form">
                 <div class="form-group">
-                    <label for="recovery-selection">Select target recovery method</label>
+                    <label for="recovery-selection">Select target recovery method and System</label>
                     <select class="form-control" id="recovery-selection">
                         <option selected="selected" value="ACDC">ACDC</option>
                         <option value="ARC">ARC</option>
                         <option value="RELAX">RELAX</option>
                     </select>
+                    <select class="form-control" id="project-selection">
+                        <option selected="selected" value="chukwa_0.7.0">chukwa_0.7.0</option>
+                        <option value="chukwa_0.4.0">chukwa_0.4.0</option>
+                        <option value="chukwa_0.3.0">chukwa_0.3.0</option>
+                    </select>
                 </div>
                 <input class="btn btn-primary" value="generate" onclick="build()">
             </form>
+            
         </div>
         <div class="row">
         
@@ -107,8 +113,11 @@
     });
     
     function build(){
-            var filename = document.getElementById("recovery-selection").value;
-            d3.json('JSON/'+filename+".json", function(error, flare) {
+            var methodname = document.getElementById("recovery-selection").value;
+            var systemname = document.getElementById("project-selection").value;
+            console.log(systemname+"_"+methodname);
+            d3.json('JSON/'+systemname+"_"+methodname+".json", function(error, flare) {
+
               if (error) throw error;
 
               root = flare;

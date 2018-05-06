@@ -8,16 +8,18 @@ FileSystem.readdirSync('Load').forEach(file => {
 console.log(Filename.length);
 
 for (var k=0; k < Filename.length; k++){
+    var splitted = Filename[k].split("_");
+    var systemName = splitted[0]+"_"+splitted[1];
     if(Filename[k].indexOf('arc') > -1 && Filename[k].indexOf('clusters') > -1 ){
-        generate(Filename[k], 'ARC');
+        generate(Filename[k], 'ARC', systemName);
     }else if(Filename[k].indexOf('acdc') > -1 && Filename[k].indexOf('clustered') > -1 ){
-        generate(Filename[k], 'ACDC');
+        generate(Filename[k], 'ACDC', systemName);
     }else if(Filename[k].indexOf('relax') > -1 && Filename[k].indexOf('clusters') > -1){
-        generate(Filename[k], 'RELAX');
+        generate(Filename[k], 'RELAX', systemName);
     }
 }
 
-function generate(path, type){
+function generate(path, type, systemName){
 FileSystem.readFile('Load/'+path, function(err, data){
     if (err){
         return console.error(err);
@@ -79,7 +81,7 @@ FileSystem.readFile('Load/'+path, function(err, data){
         FileSystem.mkdirSync(target);
     }
     var json = JSON.stringify(recovery);
-    FileSystem.writeFile('JSON/'+type+'.json', json, (err)=>{
+    FileSystem.writeFile('JSON/'+systemName+"_"+type+'.json', json, (err)=>{
         if(err){
             return console.error(err);
         }
