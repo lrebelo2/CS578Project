@@ -45,8 +45,13 @@ FileSystem.readFile('Load/'+path, function(err, data){
     var lineSlice = inputData.split("\n");
     
     for(var i=0; i< lineSlice.length; i++){
-        var line = lineSlice[i].split(" ");
         
+        var line = lineSlice[i].split(" ");
+       
+        if(line.length < 3){
+            console.log("in ");
+            continue;
+    }
         if(clusterType.length == 0){
             clusterType.push(line[1]);
             var newcluster = new clusterData(line[1]);
