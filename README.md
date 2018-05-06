@@ -44,7 +44,6 @@ Clicking on each node, the visualization starts from that node. That node become
 
 2. Dependencies Visualization
 
-<<<<<<< HEAD
 2.1. Generating Input: Simply run Arcade on your system on any recovery method to generate your "...deps.rsf" file.
     
 2.2. Generate the graph: On the page, submit your ...deps.rsf file and click the Submit button. It will generate the graph showing the highest level of abstraction.
@@ -57,6 +56,8 @@ Mouseover: Mousing over any package name willl highlight its dependencies
 
 3. Clusters Visualization 
 
+3.1 Generating Input
+
 This application should be placed on local server to prevent cross domain issue. Since it is reading json files from a local folder. Apache servers are preinstalled on MAC OS.
 
 This application is written in Node.js, make sure your system has Node configured. 
@@ -64,5 +65,7 @@ This application is written in Node.js, make sure your system has Node configure
 place your ARC, ACDC, and RELAX cluster(s/ed).rsf file into the Load directory of the application.
 
 Run the project.js file from the command line with  "> node project.js" command through terminal to generate the JSON files.
+
+3.2 Generating Graph
 
 Now files are ready to be visualized, check the webpage. Before generating the visualization, you should select the target system and the recovery method using the file input and drop down menu.
