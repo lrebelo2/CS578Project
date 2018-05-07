@@ -6,6 +6,8 @@ Negar Abolhassani
 Lucas Rebelo
 Vahagen Sinanian
 
+Project repository: https://github.com/ryanfchase/architecture-wizards
+
 Scrolling the page, three tools are available for visualzations:
 
 1. Structure Visualization
@@ -69,3 +71,5 @@ Run the project.js file from the command line with  "> node project.js" command 
 3.2 Generating Graph
 
 Now files are ready to be visualized, check the webpage. Before generating the visualization, you should select the target system and the recovery method using the file input and drop down menu.
+
+
